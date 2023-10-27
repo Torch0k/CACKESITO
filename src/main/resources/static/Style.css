@@ -5,6 +5,73 @@
 @import url(jquery.fancybox.css);
 @import url(settings.css);
 @import url(lightgallery.min.css);
+/* Стилизация контейнера с классом "container" */
+.container {
+    max-width: 1500px; /* Максимальная ширина контейнера да кароче ебать меняет размер картинок на странице переписывать надо нахуй css и бустарм todo переписать boostrap */
+
+}
+.filter-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 10vh; /* Чтобы центрировать по вертикали на всей высоте экрана */
+}
+
+.filter {
+    display: inline-block;
+    margin: 0 5px 15px;
+    padding: 10px 30px;
+    text-transform: uppercase;
+    border: 2px solid #E4E0D5;
+    border-radius: 30px;
+    font-size: 16px;
+    letter-spacing: 2px;
+    cursor: pointer;
+    position: relative;
+    -webkit-transition: all 200ms ease-out;
+    -moz-transition: all 200ms ease-out;
+    -o-transition: all 200ms ease-out;
+    transition: all 200ms ease-out;
+
+}
+.filter:focus {
+    background-color: #fff0db;
+    outline: none; /* Чтобы убрать фокусную рамку */
+}
+
+
+
+
+/* CSS стили для отображения */
+.show {
+    display: block;
+}
+
+/* CSS стили для скрытия */
+.hide {
+    display: none;
+}
+
+.hover-image {
+    overflow: hidden;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    opacity: 0;
+    transition: opacity 0.3s;
+
+}
+
+/* Показать второе изображение при наведении на элемент */
+.img-container:hover .hover-image {
+    opacity: 1;
+    overflow: hidden;
+}
+
+
+
 body{
     font-size: 18px;
     line-height: 1.6;
@@ -291,7 +358,7 @@ a:focus{
     left: 0;
 }
 .header-panel{
-    background: #EBB093;
+    background:#fff0db;
     color: #4B3939;
     height: 64px;
     line-height: 64px;
@@ -509,7 +576,7 @@ hr.white{
 }
 .services-section .element .title{
     font-family: 'neucha';
-    font-size: 30px;
+    font-size: 50px;
     line-height: 1;
     margin-bottom: 20px;
     color: #4B3939;
@@ -656,18 +723,21 @@ hr.white{
     border-bottom: 1px solid #F1E3D3;
 }
 .application-inner .element{
+
     margin-bottom: 20px;
     -webkit-transition: all 400ms ease-out;
 	-moz-transition: all400ms ease-out;
 	-o-transition: all 400ms ease-out;
 	transition: all 400ms ease-out;
     box-shadow: 0 0 4px rgba(0,0,0,0.3);
+    position: relative;
+    left: 0;
 }
 .application-inner .element:hover{
     box-shadow: 0 0 10px rgba(0,0,0,0.6);
 }
 .application-inner .element-inner{
-    background: #FFEED8;
+    background:#fff0db;
     overflow: hidden;
     border-radius: 3px;
 }
@@ -694,13 +764,7 @@ hr.white{
     opacity: 1;
     background-size: 32px 32px;
 }
-.application-inner .element:hover img{
-    -moz-transform: scale(1.3) rotate(10deg);
-    -webkit-transform: scale(1.3) rotate(10deg);
-    -o-transform: scale(1.3) rotate(10deg);
-    -ms-transform: scale(1.3) rotate(10deg);
-    transform: scale(1.3) rotate(10deg);
-}
+
 .application-inner .element-content{
     padding: 20px 15px 10px;
     text-align: center;
@@ -709,7 +773,7 @@ hr.white{
     line-height: 1.2;
     font-size: 17px;
     margin-bottom: 4px;
-    font-family: 'neucha';
+    font-family: 'neucha', sans-serif;
     text-transform: uppercase;
     letter-spacing: 1px;
     color: #4B3939;
@@ -739,7 +803,7 @@ hr.white{
 	-o-transition: all 200ms ease-out;
 	transition: all 200ms ease-out;
 }
-.simplefilter li.active,
+
 .simplefilter li:hover{
     background: #4B3939;
     border-color: #4B3939;
@@ -1004,7 +1068,7 @@ hr.white{
     width: 100%;
 }
 .special-offers .item .element-content{
-    background: #FFEED8;
+    background:#fff0db;
     position: relative;
 }
 .special-offers .item .element-content:after{
@@ -1016,7 +1080,7 @@ hr.white{
     top: -8px;
     left: 50%;
     margin-left: -8px;
-    background: #FFEED8;
+    background:#fff0db;
     -moz-transform: rotate(180deg);
     -webkit-transform: rotate(180deg);
     -o-transform: rotate(180deg);
@@ -1562,21 +1626,7 @@ h1.big,
     font-size: 50px;
 }  
 }
+
 /* End action */
 
 
-
-
-/* ucoz custom */
-@media only screen and (max-width: 767px){
-.myWinCont{
-    max-width: 100% !important;
-}
-.xw-plain{
-    width: 300px !important;
-}
-#_uwndTop1{
-        left: 50% !important;
-        margin-left: -150px !important;
-}
-}

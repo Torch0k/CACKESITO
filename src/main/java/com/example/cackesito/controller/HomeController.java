@@ -8,4 +8,6 @@ public class HomeController {
     public String example(){
         return "example";
     }
+    @GetMapping("/example")// Обработка запроса на главную страницу
+    public String mainPage(){return "example";}//главная страница
 }
